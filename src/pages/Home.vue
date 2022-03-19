@@ -3,11 +3,11 @@
         <div class="header"></div>
         <div class="content"></div>
         <div class="footer">
-            <van-tabbar v-model="active">
-                <van-tabbar-item icon="home-o">标签11</van-tabbar-item>
-                <van-tabbar-item icon="search">标签22</van-tabbar-item>
-                <van-tabbar-item icon="friends-o">标签22</van-tabbar-item>
-                <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+            <van-tabbar v-model="active" @change="onChange">
+                <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+                <van-tabbar-item icon="search">线索大厅</van-tabbar-item>
+                <van-tabbar-item icon="friends-o">寻亲大厅</van-tabbar-item>
+                <van-tabbar-item icon="setting-o">我的</van-tabbar-item>
             </van-tabbar>
         </div>
     </div>
@@ -15,11 +15,13 @@
 
 <script>
 import { ref } from "vue";
+import { Toast } from "vant";
 
 export default {
     setup() {
         const active = ref(0);
-        return { active };
+        const onChange = (index) => Toast(`标签 ${index}`);
+        return { active, onChange };
     },
 };
 </script>
