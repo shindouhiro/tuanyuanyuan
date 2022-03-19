@@ -4,15 +4,15 @@
             <!-- 这是姓名起始的代码，从这里复制哦^_^ -->
             <van-field
                 v-model="username"
-                name="姓名"
+                name="username"
                 label="姓名"
                 placeholder="姓名"
                 :rules="[{ required: true, message: '请填写用户名' }]"
             />
             <!-- 从这里复制结束 -->
             <van-field
-                v-model="username"
-                name="性别"
+                v-model="sex"
+                name="sex"
                 label="性别"
                 placeholder="性别"
                 :rules="[{ required: true, message: '请填写用户名' }]"
@@ -26,8 +26,8 @@
 <!-- 照片结束 -->
 <!-- 特征描述begin -->
 <van-field
-                v-model="username"
-                name="特征描述"
+                v-model="description"
+                name="description"
                 label="特征描述"
                 placeholder="特征描述"
                 :rules="[{ required: true, message: '请输入特征描述' }]"
@@ -50,33 +50,14 @@
     @cancel="showPicker = false"
   />
 </van-popup>
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const result = ref('');
-    const showPicker = ref(false);
-
-    const onConfirm = (value) => {
-      result.value = value;
-      showPicker.value = false;
-    };
-
-    return {
-      result,
-      onConfirm,
-      showPicker,
-    };
-  },
-};
 
 <!-- 发现时间end -->
 
 
 
              <van-field
-                v-model="username"
-                name="联系人"
+                v-model="contacts"
+                name="contacts"
                 label="联系人"
                 placeholder="联系人"
                 :rules="[{ required: true, message: '请填写联系人' }]"
@@ -86,7 +67,7 @@ export default {
             
                 v-model="password"
                 type="password"
-                name="密码"
+                name="password"
                 label="密码"
                 placeholder="密码"
                 :rules="[{ required: true, message: '请填写密码' }]"
@@ -105,19 +86,35 @@ import { ref } from "vue";
 
 export default {
     setup() {
+        const contacts =ref("");
+        const description =ref("");
+        const sex =ref("");
         const username = ref("");
         const password = ref("");
         const onSubmit = (values) => {
             console.log("submit", values);
         };
+ const result = ref('');
+    const showPicker = ref(false);
 
+    const onConfirm = (value) => {
+      result.value = value;
+      showPicker.value = false;
+    };
         return {
+            contacts,
+            description,
+            sex,
             username,
             password,
+            result,
             onSubmit,
+            onConfirm,
+      showPicker,
         };
     },
-    
+
 };
+
 
 </script>
