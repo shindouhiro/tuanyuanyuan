@@ -1,6 +1,4 @@
-<template>
-    <div class="wrap"></div>
-</template>
+<template>222</template>
 <style>
 .wrap {
     background: red;
