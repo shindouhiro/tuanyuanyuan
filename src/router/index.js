@@ -3,22 +3,34 @@ import Home from "../pages/Home.vue";
 import My from "../pages/My.vue";
 import Relative from "../pages/Relative.vue";
 import Clues from "../pages/Clues.vue";
+import Layout from "../layout/index.vue";
 const routes = [
     {
         path: "/",
-        component: Home,
-    },
-    {
-        path: "/my",
-        component: My,
-    },
-    {
-        path: "/relative",
-        component: Relative,
-    },
-    {
-        path: "/clues",
-        component: Clues,
+        name: "layout",
+        component: Layout,
+        children: [
+            {
+                path: "/",
+                name: "home",
+                component: Home,
+            },
+            {
+                path: "/my",
+                name: "my",
+                component: My,
+            },
+            {
+                path: "/relative",
+                name: "relative",
+                component: Relative,
+            },
+            {
+                path: "/clues",
+                name: "clues",
+                component: Clues,
+            },
+        ],
     },
 ];
 
