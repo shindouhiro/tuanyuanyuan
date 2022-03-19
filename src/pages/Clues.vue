@@ -23,6 +23,26 @@
             </van-button>
         </div>
     </van-form>
+
+<van-field name="uploader" label="文件上传">
+  <template #input>
+    <van-uploader v-model="value" />
+  </template>
+</van-field>
+
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref([{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }]);
+    return { value };
+  },
+};
+
+
+
+
+
 </template>
 <script>
 import { ref } from "vue";
