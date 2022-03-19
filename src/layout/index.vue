@@ -34,7 +34,6 @@ export default {
             }
         );
         const onChange = (index) => {
-            console.log(index, "index");
             switch (index) {
                 case 0:
                     router.push({ name: "home" });
