@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
     <van-form @submit="onSubmit">
         <van-cell-group inset>
@@ -25,15 +24,6 @@
         </div>
     </van-form>
 </template>
-=======
-<template>222</template>
-<style>
-.wrap {
-    background: red;
-    font-size: 24px;
-}
-</style>
->>>>>>> 89bb988b115bba335819a545b7667202f34d7904
 <script>
 import { ref } from "vue";
 
