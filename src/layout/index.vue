@@ -1,6 +1,8 @@
 <template>
     <div class="wrap">
-        <div class="header"></div>
+        <div class="header">
+            <van-nav-bar :title="title" />
+        </div>
         <div class="content">
             <router-view></router-view>
         </div>
@@ -16,12 +18,21 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 export default {
     setup() {
         const active = ref(0);
+        const title = ref("");
         const router = useRouter();
+        const route = useRoute();
+
+        watch(
+            () => route.meta.title,
+            (val) => {
+                title.value = val;
+            }
+        );
         const onChange = (index) => {
             console.log(index, "index");
             switch (index) {
@@ -42,7 +53,7 @@ export default {
                     break;
             }
         };
-        return { active, onChange };
+        return { active, onChange, title };
     },
 };
 </script>
@@ -53,9 +64,7 @@ export default {
     height: 100vh;
     flex-direction: column;
 }
-.header {
-    height: 80px;
-}
+
 .content {
     flex: 1;
 }

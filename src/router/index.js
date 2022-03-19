@@ -14,21 +14,33 @@ const routes = [
                 path: "/",
                 name: "home",
                 component: Home,
+                meta: {
+                    title: "首页",
+                },
             },
             {
                 path: "/my",
                 name: "my",
                 component: My,
+                meta: {
+                    title: "我的",
+                },
             },
             {
                 path: "/relative",
                 name: "relative",
                 component: Relative,
+                meta: {
+                    title: "寻亲大厅",
+                },
             },
             {
                 path: "/clues",
                 name: "clues",
                 component: Clues,
+                meta: {
+                    title: "线索大厅",
+                },
             },
         ],
     },
