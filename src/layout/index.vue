@@ -52,7 +52,6 @@ export default {
     display: flex;
     height: 100vh;
     flex-direction: column;
-    background-color: blue;
 }
 .header {
     height: 80px;
@@ -61,9 +60,5 @@ export default {
 .content {
     flex: 1;
     background-color: lightyellow;
-}
-.footer {
-    height: 100px;
-    background-color: lightblue;
 }
 </style>
