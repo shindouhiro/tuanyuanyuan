@@ -3,7 +3,7 @@
         <van-cell-group inset>
             <van-field
                 v-model="username"
-                name="用户111名"
+                name="用户名"
                 label="用户名"
                 placeholder="用户名"
                 :rules="[{ required: true, message: '请填写用户名' }]"
