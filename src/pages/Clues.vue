@@ -53,18 +53,15 @@
             />
             <van-popup v-model:show="showPicker" position="bottom">
                 <van-datetime-picker
-                    type="time"
+                    v-model="currentDate"
+                    type="datetime"
+                    title="选择完整时间"
+                    :max-date="maxDate"
                     @confirm="onConfirm"
                     @cancel="showPicker = false"
                 />
             </van-popup>
-<van-datetime-picker
-  v-model="currentDate"
-  type="datetime"
-  title="选择完整时间"
-  :min-date="minDate"
-  :max-date="maxDate"
-/>
+
             <!-- 发现时间end -->
             <van-field
                 v-model="areachoose"
@@ -122,9 +119,12 @@ export default {
             console.log("submit", values);
         };
         const findtime = ref("");
-        const areachoose= ref("");
+        const areachoose = ref("");
         const showPicker = ref(false);
         const showArea = ref(false);
+        const date = new Date();
+        const currentDate = ref(new Date());
+
         const onAreaConfirm = (areaValues) => {
             showArea.value = false;
             areachoose.value = areaValues
@@ -141,9 +141,9 @@ export default {
             contacts,
             description,
             sex,
+            currentDate,
             username,
             password,
-           
             onSubmit,
             onConfirm,
             onAreaConfirm,
@@ -152,6 +152,7 @@ export default {
             areaList,
             areachoose,
             findtime,
+            maxDate: new Date(),
         };
     },
 };
