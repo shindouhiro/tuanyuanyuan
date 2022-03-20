@@ -11,21 +11,19 @@
             />
             <!-- 从这里复制结束 -->
             <van-field
-               
                 name="sex"
                 label="性别"
                 placeholder="性别"
                 :rules="[{ required: true, message: '请填写用户名' }]"
             >
-            <template #input>
-            <van-radio-group v-model="sex" direction="horizontal">
-                <van-radio name="1">男</van-radio>
-                <van-radio name="2">女</van-radio>
-            </van-radio-group>
-           </template>
-            </van-field> 
-            
-           
+                <template #input>
+                    <van-radio-group v-model="sex" direction="horizontal">
+                        <van-radio name="1">男</van-radio>
+                        <van-radio name="2">女</van-radio>
+                    </van-radio-group>
+                </template>
+            </van-field>
+
             <!-- 这是上传照片起始的代码 -->
 
             <van-field name="uploader" label="疑似走失者照片">
@@ -54,28 +52,30 @@
                 @click="showPicker = true"
             />
             <van-popup v-model:show="showPicker" position="bottom">
-                <van-datetime-picker type="time" @confirm="onConfirm" @cancel="showPicker = false" />
+                <van-datetime-picker
+                    type="time"
+                    @confirm="onConfirm"
+                    @cancel="showPicker = false"
+                />
             </van-popup>
 
             <!-- 发现时间end -->
             <van-field
-  v-model="result"
-  is-link
-  readonly
-  name="area"
-  label="地区选择"
-  placeholder="点击选择省市区"
-  @click="showArea = true"
-/>
-<van-popup v-model:show="showArea" position="bottom">
-  <van-area
-    :area-list="areaList"
-    @confirm="onConfirm"
-    @cancel="showArea = false"
-  />
-</van-popup>
-
-            
+                v-model="result"
+                is-link
+                readonly
+                name="area"
+                label="地区选择"
+                placeholder="点击选择省市区"
+                @click="showArea = true"
+            />
+            <van-popup v-model:show="showArea" position="bottom">
+                <van-area
+                    :area-list="areaList"
+                    @confirm="onAreaConfirm"
+                    @cancel="showArea = false"
+                />
+            </van-popup>
 
             <van-field
                 v-model="contacts"
@@ -95,14 +95,15 @@
             />
         </van-cell-group>
         <div style="margin: 16px">
-            <van-button round block type="primary" native-type="submit">提交</van-button>
+            <van-button round block type="primary" native-type="submit"
+                >提交</van-button
+            >
         </div>
     </van-form>
 </template>
 <script>
-
 import { ref } from "vue";
-import { areaList } from '@vant/area-data';
+import { areaList } from "@vant/area-data";
 
 export default {
     setup() {
@@ -114,16 +115,16 @@ export default {
         const onSubmit = (values) => {
             console.log("submit", values);
         };
-        const result = ref('');
+        const result = ref("");
         const showPicker = ref(false);
         const showArea = ref(false);
-    const onConfirm = (areaValues) => {
-      showArea.value = false;
-      result.value = areaValues
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/');
-    };
+        const onAreaConfirm = (areaValues) => {
+            showArea.value = false;
+            result.value = areaValues
+                .filter((item) => !!item)
+                .map((item) => item.name)
+                .join("/");
+        };
 
         const onConfirm = (value) => {
             result.value = value;
@@ -138,11 +139,11 @@ export default {
             result,
             onSubmit,
             onConfirm,
+            onAreaConfirm,
             showPicker,
+            showArea,
+            areaList,
         };
     },
-
 };
-
-
 </script>
