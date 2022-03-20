@@ -58,6 +58,24 @@
             </van-popup>
 
             <!-- 发现时间end -->
+            <van-field
+  v-model="result"
+  is-link
+  readonly
+  name="area"
+  label="地区选择"
+  placeholder="点击选择省市区"
+  @click="showArea = true"
+/>
+<van-popup v-model:show="showArea" position="bottom">
+  <van-area
+    :area-list="areaList"
+    @confirm="onConfirm"
+    @cancel="showArea = false"
+  />
+</van-popup>
+
+            
 
             <van-field
                 v-model="contacts"
@@ -84,6 +102,7 @@
 <script>
 
 import { ref } from "vue";
+import { areaList } from '@vant/area-data';
 
 export default {
     setup() {
@@ -97,6 +116,14 @@ export default {
         };
         const result = ref('');
         const showPicker = ref(false);
+        const showArea = ref(false);
+    const onConfirm = (areaValues) => {
+      showArea.value = false;
+      result.value = areaValues
+        .filter((item) => !!item)
+        .map((item) => item.name)
+        .join('/');
+    };
 
         const onConfirm = (value) => {
             result.value = value;
