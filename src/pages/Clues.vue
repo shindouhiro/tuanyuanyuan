@@ -43,7 +43,7 @@
             <!-- 特征描述end -->
             <!-- 发现时间begin -->
             <van-field
-                v-model="result"
+                v-model="findtime"
                 is-link
                 readonly
                 name="datetimePicker"
@@ -58,10 +58,16 @@
                     @cancel="showPicker = false"
                 />
             </van-popup>
-
+<van-datetime-picker
+  v-model="currentDate"
+  type="datetime"
+  title="选择完整时间"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
             <!-- 发现时间end -->
             <van-field
-                v-model="result"
+                v-model="areachoose"
                 is-link
                 readonly
                 name="area"
@@ -115,19 +121,20 @@ export default {
         const onSubmit = (values) => {
             console.log("submit", values);
         };
-        const result = ref("");
+        const findtime = ref("");
+        const areachoose= ref("");
         const showPicker = ref(false);
         const showArea = ref(false);
         const onAreaConfirm = (areaValues) => {
             showArea.value = false;
-            result.value = areaValues
+            areachoose.value = areaValues
                 .filter((item) => !!item)
                 .map((item) => item.name)
                 .join("/");
         };
 
         const onConfirm = (value) => {
-            result.value = value;
+            findtime.value = value;
             showPicker.value = false;
         };
         return {
@@ -136,13 +143,15 @@ export default {
             sex,
             username,
             password,
-            result,
+           
             onSubmit,
             onConfirm,
             onAreaConfirm,
             showPicker,
             showArea,
             areaList,
+            areachoose,
+            findtime,
         };
     },
 };
