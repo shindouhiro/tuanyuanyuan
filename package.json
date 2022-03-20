@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vant/area-data": "^1.2.3",
+    "moment": "^2.29.1",
     "vant": "^3.4.6",
     "vue": "^3.2.25",
     "vue-router": "4"
