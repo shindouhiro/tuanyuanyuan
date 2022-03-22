@@ -1,4 +1,8 @@
+
 <template>
+<bg-white>
+    请务必认真填写以下内容，团圆圆目前致力于寻找走失的老人、小孩以及成年人，若走失事件超过1个月，则可能会增加找寻难度，还望理解。
+</bg-white>
     <van-form @submit="onSubmit">
         <van-cell-group inset>
             <!-- 这是姓名起始的代码，从这里复制哦^_^ -->
@@ -130,14 +134,7 @@
                 </template>
             </van-field>
             <!-- 这是是否已报警结束 -->
-            <van-field
-                v-model="password"
-                type="password"
-                name="password"
-                label="密码"
-                placeholder="密码"
-                :rules="[{ required: true, message: '请填写密码' }]"
-            />
+          
         </van-cell-group>
         <div style="margin: 16px">
             <van-button round block type="primary" native-type="submit"
