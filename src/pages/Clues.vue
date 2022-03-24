@@ -86,6 +86,15 @@
                     @cancel="showArea = false"
                 />
             </van-popup>
+            <!-- 补充地址开始 -->
+             <van-field
+                v-model="detailed_address"
+                name="detailed_address"
+                label="详细地址"
+                placeholder="详细地址"
+                :rules="[{ required: true, message: '请输入详细地址' }]"
+                 />
+              
             <!-- 这是匿名开始 -->
             <van-field
                 name="anonymous"
@@ -160,6 +169,7 @@ export default {
         const anonymous = ref("");
         const username = ref("");
         const password = ref("");
+        const detailed_address = ref("");
         const onSubmit = (values) => {
             console.log("submit", values);
         };
@@ -192,6 +202,7 @@ export default {
             currentDate,
             username,
             password,
+            detailed_address,
             onSubmit,
             onConfirm,
             onAreaConfirm,
