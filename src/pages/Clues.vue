@@ -1,8 +1,10 @@
 
 <template>
-<bg-white>
-    请务必认真填写以下内容，团圆圆目前致力于寻找走失的老人、小孩以及成年人，若走失事件超过1个月，则可能会增加找寻难度，还望理解。
-</bg-white>
+<div class=" bg-gray-100 flex flex-col h-16 text-sm px-2">
+    <p>请务必认真填写以下内容，团圆圆目前致力于寻找走失的老人、小孩以及成年人，若走失事件超过1个月，则可能会增加找寻难度，还望理解。</p>
+    </div>
+
+
     <van-form @submit="onSubmit">
         <van-cell-group inset>
             <!-- 这是姓名起始的代码，从这里复制哦^_^ -->
