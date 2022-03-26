@@ -5,4 +5,16 @@ import WindiCSS from "vite-plugin-windicss";
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [vue(), WindiCSS()],
+    server: {
+        proxy: {
+            "/oauth": {
+                target: "https://aip.baidubce.com/",
+                changeOrigin: true,
+            },
+            "/rest": {
+                target: "https://aip.baidubce.com/",
+                changeOrigin: true,
+            },
+        },
+    },
 });

@@ -23,11 +23,21 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
+import { ref, onMounted } from "vue";
+import axios from "axios";
 export default {
     setup() {
         const activeNames = ref(["1", "2"]);
+        onMounted(() => {
+            axios
+                .get(
+                    "oauth/2.0/token?grant_type=client_credentials&client_id=S3lvngvp62XIeN7hIMnNM7G3&client_secret=06NBVzuWAe6uvTlyPDgaRfmhbAsH4fOS"
+                )
+
+                .then((res) => {
+                    console.log(res, "res");
+                });
+        });
         return { activeNames };
     },
 };

@@ -4,6 +4,7 @@ import My from "../pages/My.vue";
 import Relative from "../pages/Relative.vue";
 import Clues from "../pages/Clues.vue";
 import Layout from "../layout/index.vue";
+import Image from "../pages/Image.vue";
 const routes = [
     {
         path: "/",
@@ -40,6 +41,14 @@ const routes = [
                 component: Clues,
                 meta: {
                     title: "线索大厅",
+                },
+            },
+            {
+                path: "/image",
+                name: "image",
+                component: Image,
+                meta: {
+                    title: "对比",
                 },
             },
         ],
