@@ -5,11 +5,11 @@ module.exports = {
     node: true
   },
   extends: [
-    '=plugin:vue/essential',
+    'plugin:vue/essential',
     'standard'
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: "latest",
     sourceType: 'module'
   },
   plugins: [
