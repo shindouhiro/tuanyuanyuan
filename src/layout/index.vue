@@ -8,10 +8,37 @@
         </div>
         <div class="footer">
             <van-tabbar v-model="active" @change="onChange">
-                <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-                <van-tabbar-item icon="search">线索大厅</van-tabbar-item>
-                <van-tabbar-item icon="friends-o">寻亲大厅</van-tabbar-item>
-                <van-tabbar-item icon="setting-o">我的</van-tabbar-item>
+               
+                <!-- 自定义icon开始 -->
+                 <van-tabbar-item>
+                    <span>首页</span>
+                    <template #icon="props">
+                        <img :src="props.active ? icon.my.active : icon.my.inactive" />
+                    </template>
+                 </van-tabbar-item>
+                 <!-- 首页icon结束 -->
+                  <van-tabbar-item>
+                    <span>线索</span>
+                    <template #icon="props">
+                        <img :src="props.active ? icon.clues.active : icon.clues.inactive" />
+                    </template>
+                 </van-tabbar-item>
+                 <!-- 线索结束 -->
+                 <van-tabbar-item>
+                    <span>寻亲</span>
+                    <template #icon="props">
+                        <img :src="props.active ? icon.findman.active : icon.findman.inactive" />
+                    </template>
+                 </van-tabbar-item>
+                 <!-- 寻亲结束 -->
+                 <van-tabbar-item>
+                    <span>我的</span>
+                    <template #icon="props">
+                        <img :src="props.active ? icon.my.active : icon.my.inactive" />
+                    </template>
+                 </van-tabbar-item>
+                <!-- 自定义icon结束 -->
+  
             </van-tabbar>
         </div>
     </div>
@@ -33,6 +60,28 @@ export default {
                 title.value = val;
             }
         );
+        //自定义icon开始
+        const icon = {
+            first:{
+                active: '../../static/icons/tab_first.png',
+                inactive: '../../static/icons/un_first.png'
+            },
+            clues:{
+                active: '../../static/icons/tab_clues.png',
+                inactive: '../../static/icons/un_clues.png'
+            },
+            findman:{
+                active: '../../static/icons/tab_findman.png',
+                inactive: '../../static/icons/un_findman.png'
+            },
+            my:{
+                active: '../../static/icons/tab_my.png',
+                inactive: '../../static/icons/un_my.png'
+            }
+        };
+
+        //icon结束
+
         const onChange = (index) => {
             switch (index) {
                 case 0:
@@ -52,7 +101,7 @@ export default {
                     break;
             }
         };
-        return { active, onChange, title };
+        return { active, onChange, title,icon };
     },
 };
 </script>
