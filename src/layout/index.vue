@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        <div class="header">
+        <div class="header" v-if="title!='首页'">
             <van-nav-bar :title="title" />
         </div>
         <div class="content">
