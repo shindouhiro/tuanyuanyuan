@@ -1,5 +1,13 @@
 <template>
-  <van-grid direction="horizontal" :column-num="2">
+  <!-- 测试 -->
+  <van-image
+    width="100%"
+    height="auto"
+    fit="contain"
+    src="../../static/images/banner.png"
+  />
+
+  <van-grid direction="horizontal" :column-num="2" style="margin-top: -10px">
     <van-grid-item icon="photo-o" text="我要提供线索" />
     <van-grid-item icon="photo-o" text="我要紧急寻人" />
   </van-grid>
@@ -39,6 +47,12 @@ export default {
         })
     })
     return { activeNames }
-  },
+  }
 }
 </script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>
