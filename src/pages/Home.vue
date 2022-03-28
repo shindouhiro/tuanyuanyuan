@@ -1,33 +1,28 @@
 <template>
   <!-- 测试 -->
-  <div style="text-align:center"
-    height="auto">
-     <van-image
-    width="100%"
-    height="auto"
-    fit="contain"
-    src="../../static/images/banner.png"
-    style="z-index=1"
-  />
- 
-  <van-image
-    width="90%"
-    height="auto"
-    fit="contain"
-    src="../../static/images/open_ai.png"
-    style="z-index:10;top:-45px" 
+  <div style="text-align: center" height="auto">
+    <van-image
+      width="100%"
+      height="auto"
+      fit="contain"
+      src="../../static/images/banner.png"
+      style="z-index=1"
     />
-</div>
-<van-grid :column-num="2">
-  <van-grid-item icon="photo-o" text="文字" />
-  <van-grid-item icon="photo-o" text="文字" />
-  
-</van-grid>
 
+    <van-image
+      width="90%"
+      height="auto"
+      fit="contain"
+      src="../../static/images/open_ai.png"
+      style="margin-top: -40px"
+    />
+  </div>
+  <van-grid :column-num="2" style="margin-top: -12px">
+    <van-grid-item icon="photo-o" text="文字" />
+    <van-grid-item icon="photo-o" text="文字" />
+  </van-grid>
 
-
-
-  <van-grid direction="horizontal" :column-num="2" style="margin-top: -10px">
+  <van-grid direction="horizontal" :column-num="2">
     <van-grid-item icon="photo-o" text="我要提供线索" />
     <van-grid-item icon="photo-o" text="我要紧急寻人" />
   </van-grid>
