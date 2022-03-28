@@ -67,10 +67,6 @@ export default {
 }
 </script>
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
 :deep(.van-icon__image) {
   display: block;
   width: 5em;
