@@ -17,13 +17,8 @@
       style="margin-top: -40px"
     />
   </div>
-  <van-grid :column-num="2" style="margin-top: -12px"
-   width="100%"
-   
-   >
- 
-   
-        <van-grid-item icon="../../static/images/want _to_ provide_ clues.png"/>
+  <van-grid :column-num="2" style="margin-top: -12px" width="100%">
+    <van-grid-item icon="../../static/images/want _to_ provide_ clues.png" />
 
     <van-grid-item icon="photo-o" text="文字" />
   </van-grid>
@@ -71,15 +66,20 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
-  
+}
+:deep(.van-icon__image) {
+  display: block;
+  width: 5em;
+  height: 3em;
+  object-fit: contain;
 }
 /* 去除图片样式 */
-img{
-    vertical-align:top;
-    border:none
-    }
+img {
+  vertical-align: top;
+  border: none;
+}
 </style>
