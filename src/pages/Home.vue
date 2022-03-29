@@ -16,14 +16,14 @@
       src="../../static/images/open_ai.png"
       style="margin-top: -40px"
     />
-  </div>
-  <van-grid :column-num="2" style="margin-top: -12px" width="100%">
+    </div>
+    <van-grid :column-num="2"  style="margin-top: -12px" width="100%" border="false">
     <van-grid-item icon="../../static/images/want _to_ provide_ clues.png" />
 
-    <van-grid-item icon="photo-o" text="文字" />
-  </van-grid>
+    <van-grid-item icon="../../static/images/need_family.png" />
+     </van-grid>
 
-  <van-grid direction="horizontal" :column-num="2">
+  <!-- <van-grid direction="horizontal" :column-num="2">
     <van-grid-item icon="photo-o" text="我要提供线索" />
     <van-grid-item icon="photo-o" text="我要紧急寻人" />
   </van-grid>
@@ -31,7 +31,7 @@
     <van-grid-item icon="photo-o" text="一键报警" />
     <van-grid-item icon="photo-o" text="人贩子举报" />
     <van-grid-item icon="photo-o" text="AI寻亲" />
-  </van-grid>
+  </van-grid> -->
   <van-collapse v-model="activeNames">
     <van-collapse-item title="家人走失怎么办" name="1">
       <p>1.采取排除法来理清思路。回想最后看到亲人的位置。</p>
@@ -69,13 +69,21 @@ export default {
 <style scoped>
 :deep(.van-icon__image) {
   display: block;
-  width: 5em;
+  width: 6em;
   height: 3em;
   object-fit: contain;
+  
+  
 }
 /* 去除图片样式 */
 img {
   vertical-align: top;
   border: none;
+}
+:deep(.van-grid) {
+  display: block;
+  border: ture;
+  
+ 
 }
 </style>
