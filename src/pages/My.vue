@@ -1,15 +1,14 @@
 <template>
-  <van-row>sdfsdf sdf sdf 
+  <van-row
+    >sdfsdf sdf sdf
     <div class="bg-gray-900 h-4/5 w-4/6"></div>
-    
-      <van-image
+
+    <van-image
       position="right"
       round
       width="5rem"
       height="5rem"
-    
       src="https://img.yzcdn.cn/vant/cat.jpeg"
-      
     />
   </van-row>
   <van-cell-group>
@@ -26,12 +25,8 @@
   </van-cell-group>
 </template>
 
-
-<style>
-:deep(.van-row) {
-  display: block;
-  background: #000;
-  width:300px;
-  height:500px;
+<style scoped>
+.van-row {
+  background: red;
 }
 </style>
