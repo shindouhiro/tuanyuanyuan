@@ -17,7 +17,7 @@
       style="margin-top: -40px"
     />
   </div>
-  <div class="grid grid-cols-2 gap-2 px-6 pb-5">
+  <div class="grid grid-cols-2 gap-2 px-6 pb-1">
     <div>
       <img src="../../static/images/want _to_ provide_ clues.png" />
     </div>
@@ -25,16 +25,6 @@
       <img src="../../static/images/need_family.png" />
     </div>
   </div>
-  <van-grid
-    :column-num="2"
-    style="margin-top: -12px"
-    width="100%"
-    :border="false"
-  >
-    <van-grid-item icon="../../static/images/want _to_ provide_ clues.png" />
-
-    <van-grid-item icon="../../static/images/need_family.png" />
-  </van-grid>
 
   <!-- <van-grid direction="horizontal" :column-num="2">
     <van-grid-item icon="photo-o" text="我要提供线索" />
@@ -45,7 +35,7 @@
     <van-grid-item icon="photo-o" text="人贩子举报" />
     <van-grid-item icon="photo-o" text="AI寻亲" />
   </van-grid> -->
-  <van-collapse v-model="activeNames">
+  <!-- <van-collapse v-model="activeNames">
     <van-collapse-item title="家人走失怎么办" name="1">
       <p>1.采取排除法来理清思路。回想最后看到亲人的位置。</p>
       <p>
@@ -56,7 +46,25 @@
       <p>1.立即报警，无需等待24小时。</p>
       <p>2.标记孩子走失的地方，立即展开地毯式搜索。</p>
     </van-collapse-item>
-  </van-collapse>
+  </van-collapse> -->
+  <!-- <div class="lost_text"> -->
+  <h1 class="font-extrabold text-xl leading-10 p-2 px-6
+">
+      
+      如遇小孩走失</h1>
+  <p class="text-base leading-8 px-6">1.采取排除法来理清思路。回想最后看到亲人的位置。到孩子经常去的地方。</p>
+  <p class="text-base leading-8 px-6">
+        2.标记孩子走失的地方，立即展开地毯式搜索。
+      </p>
+      <!-- </div> -->
+      <h1 class="font-extrabold text-xl leading-7 p-3 px-6
+">
+      
+      家人走失怎么办</h1>
+  <p class="text-base leading-8 px-6">1.立即报警，无需等待24小时。</p>
+  <p class="text-base leading-8 px-6">
+        2.组织尽量多的人手，在老人最后走失的地点分为四个不同的方向(东南西北)去寻找，立即报警，利用警务资源进行查找。
+      </p>
 </template>
 
 <script>
@@ -95,4 +103,5 @@ img {
   display: block;
   border: ture;
 }
+h1{}
 </style>
