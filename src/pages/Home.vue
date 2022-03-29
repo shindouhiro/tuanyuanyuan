@@ -17,7 +17,7 @@
       style="margin-top: -40px"
     />
   </div>
-  <div class="grid grid-cols-2 gap-2 pl-6 pr-6 pb-5">
+  <div class="grid grid-cols-2 gap-2 px-6 pb-5">
     <div>
       <img src="../../static/images/want _to_ provide_ clues.png" />
     </div>
