@@ -16,12 +16,20 @@
       src="../../static/images/open_ai.png"
       style="margin-top: -40px"
     />
+  </div>
+  <div class="grid grid-cols-2 gap-2 pl-6 pr-6 pb-5">
+    <div>
+      <img src="../../static/images/want _to_ provide_ clues.png" />
     </div>
-    <van-grid :column-num="2"  style="margin-top: -12px" width="100%" border="false">
+    <div>
+      <img src="../../static/images/need_family.png" />
+    </div>
+  </div>
+  <!-- <van-grid :column-num="2"  style="margin-top: -12px" width="100%" border="false">
     <van-grid-item icon="../../static/images/want _to_ provide_ clues.png" />
 
     <van-grid-item icon="../../static/images/need_family.png" />
-     </van-grid>
+     </van-grid> -->
 
   <!-- <van-grid direction="horizontal" :column-num="2">
     <van-grid-item icon="photo-o" text="我要提供线索" />
@@ -72,8 +80,6 @@ export default {
   width: 6em;
   height: 3em;
   object-fit: contain;
-  
-  
 }
 /* 去除图片样式 */
 img {
@@ -83,7 +89,5 @@ img {
 :deep(.van-grid) {
   display: block;
   border: ture;
-  
- 
 }
 </style>
