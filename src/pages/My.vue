@@ -8,7 +8,7 @@
       pr-0
       src="https://img.yzcdn.cn/vant/cat.jpeg"
     /> -->
-    <div class="nav"></div>
+    <div class="nav">我们为万家团圆而努力</div>
   </van-row>
   <van-cell-group>
     <van-cell title="我的收藏" is-link icon="location-o" />
@@ -25,8 +25,15 @@
   width: 92%;
   margin: 0 auto;
   height: 53px;
+  line-height: 53px;
   background: #4759ee;
   border-top-left-radius: 19px;
   border-top-right-radius: 19px;
+  font-family: PingFang-SC-Regular;
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 0;
+  font-weight: 400;
+  text-indent: 30px;
 }
 </style>
