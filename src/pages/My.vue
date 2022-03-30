@@ -27,6 +27,6 @@
   height: 53px;
   background: #4759ee;
   border-top-left-radius: 1em;
-  border-top-right-radius: 1qem;
+  border-top-right-radius: 1em;
 }
 </style>
