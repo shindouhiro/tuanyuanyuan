@@ -22,11 +22,11 @@
   height: auto;
 }
 .nav {
-  width: 379px;
+  width: 92%;
   margin: 0 auto;
   height: 53px;
   background: #4759ee;
-  border-top-left-radius: 2em;
-  border-top-right-radius: 2em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1qem;
 }
 </style>
