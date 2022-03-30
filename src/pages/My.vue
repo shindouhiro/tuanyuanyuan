@@ -11,8 +11,8 @@
     <div class="nav">我们为万家团圆而努力</div>
   </van-row>
   <van-cell-group>
-    <van-cell title="我的收藏" is-link icon="location-o" />
-    <van-cell title="关于我们" is-link icon="location-o" />
+    <van-cell title="我的收藏" is-link icon="star-o" />
+    <van-cell title="关于我们" is-link icon="friends-o" />
   </van-cell-group>
 </template>
 

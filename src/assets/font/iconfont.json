@@ -1,0 +1,37 @@
+{
+  "id": "3291410",
+  "name": "团圆圆",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "658040",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "4171088",
+      "name": "关于我们",
+      "font_class": "guanyuwomen",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6527112",
+      "name": "计划",
+      "font_class": "jihua",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "6798111",
+      "name": "线索记录",
+      "font_class": "xiansuojilu",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    }
+  ]
+}
