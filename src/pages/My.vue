@@ -1,16 +1,27 @@
 <template>
-  <van-row src="../../static/images/my_cetern.png">
-    <!-- <van-image
+  <van-row class="flex justify-around items-center">
+    <div>13800138000</div>
+    <van-image
       display="block"
       round
       width="5rem"
       height="5rem"
       pr-0
       src="https://img.yzcdn.cn/vant/cat.jpeg"
-    /> -->
-    <div class="nav">我们为万家团圆而努力</div>
+    />
   </van-row>
-  <van-cell-group>
+  <div class="nav">我们为万家团圆而努力</div>
+  <div class="wrap flex flex-row items-center">
+    <div class="flex flex-1 flex-col justify-center items-center">
+      <span class="iconfont icon-xiansuojilu"></span>
+      <p>提供线索记录</p>
+    </div>
+    <div class="flex-1 flex flex-col justify-center items-center">
+      <span class="iconfont icon-jihua"></span>
+      <p>发布寻亲记录</p>
+    </div>
+  </div>
+  <van-cell-group class="pt-2">
     <van-cell title="我的收藏" is-link icon="star-o" />
     <van-cell title="关于我们" is-link icon="friends-o" />
   </van-cell-group>
@@ -20,6 +31,12 @@
 .van-row {
   width: 100%;
   height: auto;
+}
+.wrap {
+  height: 118px;
+}
+.wrap .iconfont {
+  font-size: 32px;
 }
 .nav {
   width: 92%;
