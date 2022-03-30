@@ -1,14 +1,19 @@
 <template>
-  <van-row
-    >sdfsdf sdf sdf
-    <div class="bg-gray-900 h-4/5 w-4/6"></div>
+  <van-row 
+  src="../../static/images/my_cetern.png">
+    <p class="text-4xl font-medium pt-12 pr-18 pl-10">手机号登录</p>
+   
 
     <van-image
-      position="right"
+      display="block"
+      
       round
       width="5rem"
       height="5rem"
-      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    pr-0 
+     
+      
+      src="https://img.yzcdn.cn/vant/cat.jpeg" 
     />
   </van-row>
   <van-cell-group>
@@ -27,6 +32,12 @@
 
 <style scoped>
 .van-row {
-  background: red;
+  
+  width:100%;
+  height:auto;
+  
+
 }
+
+
 </style>
