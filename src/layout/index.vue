@@ -1,7 +1,10 @@
 <template>
   <div class="wrap">
-    <div class="header" v-if="title != '首页'">
-      <van-nav-bar :title="title" v-if="title != '首页'" />
+    <div class="header" v-if="route.meta.title != '首页'">
+      <van-nav-bar
+        :title="route.meta.title"
+        v-if="route.meta.title != '首页'"
+      />
     </div>
     <div class="content">
       <router-view></router-view>
@@ -12,7 +15,9 @@
         <van-tabbar-item>
           <span>首页</span>
           <template #icon="props">
-            <img :src="props.active ? icon.my.active : icon.my.inactive" />
+            <img
+              :src="route.name == 'home' ? icon.my.active : icon.my.inactive"
+            />
           </template>
         </van-tabbar-item>
         <!-- 首页icon结束 -->
@@ -20,7 +25,9 @@
           <span>线索</span>
           <template #icon="props">
             <img
-              :src="props.active ? icon.clues.active : icon.clues.inactive"
+              :src="
+                route.name == 'clues' ? icon.clues.active : icon.clues.inactive
+              "
             />
           </template>
         </van-tabbar-item>
@@ -29,7 +36,11 @@
           <span>寻亲</span>
           <template #icon="props">
             <img
-              :src="props.active ? icon.findman.active : icon.findman.inactive"
+              :src="
+                route.name == 'relative'
+                  ? icon.findman.active
+                  : icon.findman.inactive
+              "
             />
           </template>
         </van-tabbar-item>
@@ -37,7 +48,9 @@
         <van-tabbar-item>
           <span>我的</span>
           <template #icon="props">
-            <img :src="props.active ? icon.my.active : icon.my.inactive" />
+            <img
+              :src="route.name == 'my' ? icon.my.active : icon.my.inactive"
+            />
           </template>
         </van-tabbar-item>
         <!-- 自定义icon结束 -->
@@ -55,7 +68,6 @@ export default {
     const title = ref('首页')
     const router = useRouter()
     const route = useRoute()
-
     watch(
       () => route.meta.title,
       (val) => {
@@ -103,7 +115,7 @@ export default {
           break
       }
     }
-    return { active, onChange, title, icon }
+    return { active, onChange, title, icon, route }
   }
 }
 </script>
