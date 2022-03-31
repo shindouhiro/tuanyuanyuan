@@ -12,6 +12,7 @@
         v-model="username"
         name="username"
         label="姓名"
+        required
         placeholder="姓名"
         :rules="[{ required: true, message: '请填写用户名' }]"
       />
@@ -19,6 +20,7 @@
       <van-field
         name="sex"
         label="性别"
+        required
         placeholder="性别"
         :rules="[{ required: true, message: '请填写用户名' }]"
       >
@@ -32,7 +34,7 @@
 
       <!-- 这是上传照片起始的代码 -->
 
-      <van-field name="uploader" label="疑似走失者照片">
+      <van-field name="uploader" label="疑似走失者照片" required>
         <template #input>
           <van-uploader v-model="value" />
         </template>
@@ -43,6 +45,7 @@
         v-model="description"
         name="description"
         label="特征描述"
+        required
         placeholder="特征描述"
         :rules="[{ required: true, message: '请输入特征描述' }]"
       />
@@ -54,10 +57,11 @@
         readonly
         name="datetimePicker"
         label="发现时间"
+        required
         placeholder="发现时间"
         @click="showPicker = true"
       />
-      <van-popup v-model:show="showPicker" position="bottom">
+      <van-popup v-model:show="showPicker" position="bottom" required>
         <van-datetime-picker
           :formatter="formatter"
           v-model="currentDate"
@@ -76,6 +80,7 @@
         readonly
         name="area"
         label="发现地区"
+        required
         placeholder="点击选择省市区"
         @click="showArea = true"
       />
@@ -91,6 +96,7 @@
         v-model="detailed_address"
         name="detailed_address"
         label="详细地址"
+        required
         placeholder="详细地址"
         :rules="[{ required: true, message: '请输入详细地址' }]"
       />
@@ -99,6 +105,7 @@
       <van-field
         name="anonymous"
         label="是否匿名"
+        required
         placeholder="是否匿名"
         :rules="[{ required: true, message: '请填写用户名' }]"
       >
@@ -115,6 +122,7 @@
         v-model="contacts"
         name="contacts"
         label="联系人"
+        required
         placeholder="联系人"
         :rules="[{ required: true, message: '请填写联系人' }]"
       />
@@ -123,6 +131,7 @@
         v-model="telephone"
         name="telephone"
         label="联系电话"
+        required
         placeholder="联系电话"
         :rules="[{ required: true, message: '请填写联系电话' }]"
       />
@@ -131,6 +140,7 @@
       <van-field
         name="callpolice"
         label="是否已报警"
+        required
         placeholder="是否已报警"
         :rules="[{ required: true, message: '请填写用户名' }]"
       >
@@ -159,10 +169,10 @@ export default {
   setup() {
     const contacts = ref('')
     const description = ref('')
-    const callpolice = ref('')
-    const sex = ref('')
+    const callpolice = ref('1')
+    const sex = ref('1')
     const telephone = ref('')
-    const anonymous = ref('')
+    const anonymous = ref('1')
     const username = ref('')
     const password = ref('')
     const detailed_address = ref('')
