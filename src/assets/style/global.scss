@@ -1,8 +1,13 @@
 // 字体
 @font-face {
-    font-family: "PingFang-SC-Regular";
+    font-family: PingFang-SC-Regular;
     src: url("../font/PingFang-SC-Regular.ttf");
+    src: url("../font/PingFang-SC-Regular.eot")
+}
+@font-face {
+    font-family: "PingFangSC-Light";
+    src: url("../font/de45d7136178b776ee438d73cb0b52e2.ttf");
 }
 body {
-    font-family: PingFang-SC-Regular;
+    font-family: PingFangSC-Light;
 }

@@ -37,6 +37,11 @@
   .iconfont {
     font-size: 32px;
   }
+  p {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 400;
+  }
 }
 .nav {
   width: 92%;
@@ -46,11 +51,9 @@
   background: #4759ee;
   border-top-left-radius: 19px;
   border-top-right-radius: 19px;
-  font-family: PingFang-SC-Regular;
   font-size: 18px;
   color: #ffffff;
   letter-spacing: 0;
-  font-weight: 400;
   text-indent: 30px;
 }
 </style>
