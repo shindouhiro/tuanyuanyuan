@@ -4,6 +4,7 @@ import router from './router'
 import 'vant/lib/index.css'
 import 'virtual:windi.css'
 import './assets/font/iconfont.css'
+import './assets/style/global.scss'
 
 import Vant, { Lazyload } from 'vant'
 
