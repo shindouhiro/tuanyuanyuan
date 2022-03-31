@@ -30,7 +30,13 @@
     </div>
   </div>
   <van-cell-group class="pt-2">
-    <van-cell title="我的收藏"  src="../../static/images/" />
+    <van-cell 
+    title="我的收藏" 
+    width="100%"
+    height="100%"
+    src="../../static/images/like.png" 
+    style="width:50%"/>
+  
     <van-cell title="关于我们" is-link icon="friends-o" size="large" />
   </van-cell-group>
 </template>
