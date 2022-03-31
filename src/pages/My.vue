@@ -27,16 +27,16 @@
   </van-cell-group>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .van-row {
   width: 100%;
   height: auto;
 }
 .wrap {
   height: 118px;
-}
-.wrap .iconfont {
-  font-size: 32px;
+  .iconfont {
+    font-size: 32px;
+  }
 }
 .nav {
   width: 92%;
