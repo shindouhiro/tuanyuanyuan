@@ -15,11 +15,16 @@
   </div>
   <div class="wrap flex flex-row items-center">
     <div class="flex flex-1 flex-col justify-center items-center">
-      <span class="iconfont icon-xiansuojilu"></span>
-      <p>提供线索记录</p>
+      <!-- 插入图片 -->
+     <div class="a">
+       <img src="../../static/images/xiansuo.png"></div> 
+       <p>提供线索记录</p>
     </div>
     <div class="flex-1 flex flex-col justify-center items-center">
-      <span class="iconfont icon-jihua"></span>
+       <!-- 插入图片 -->
+    <div class="a"> 
+      <img src="../../static/images/fabujilu.png">
+      </div>
       <p>发布寻亲记录</p>
     </div>
   </div>
@@ -61,5 +66,11 @@
     color: #333333;
     font-weight: 400;
   }
+}
+:deep(.a img){
+  width:55%;
+  display: block;
+  margin: 0;
+  padding:0;
 }
 </style>
