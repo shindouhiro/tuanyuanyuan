@@ -9,6 +9,7 @@
         height="5rem"
         pr-0
         src="https://img.yzcdn.cn/vant/cat.jpeg"
+        
       />
     </van-row>
     <div class="nav">我们为万家团圆而努力</div>
@@ -29,7 +30,7 @@
     </div>
   </div>
   <van-cell-group class="pt-2">
-    <van-cell title="我的收藏" is-link icon="star-o" size="large" />
+    <van-cell title="我的收藏"  src="../../static/images/" />
     <van-cell title="关于我们" is-link icon="friends-o" size="large" />
   </van-cell-group>
 </template>
@@ -68,9 +69,9 @@
   }
 }
 :deep(.a img){
-  width:55%;
+  width:60%;
   display: block;
-  margin: 0;
-  padding:0;
+  padding-left: 30px;
+ 
 }
 </style>
