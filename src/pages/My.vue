@@ -1,7 +1,7 @@
 <template>
   <div class="container flex flex-col">
-    <van-row class="flex justify-around items-center flex-1">
-      <div>13800138000</div>
+    <van-row class="flex justify-around items-center flex-1 ">
+      <div style="font-1200">13800138000</div>
       <van-image
         display="block"
         round
@@ -24,8 +24,8 @@
     </div>
   </div>
   <van-cell-group class="pt-2">
-    <van-cell title="我的收藏" is-link icon="star-o" />
-    <van-cell title="关于我们" is-link icon="friends-o" />
+    <van-cell title="我的收藏" is-link icon="star-o" size="large" />
+    <van-cell title="关于我们" is-link icon="friends-o" size="large" />
   </van-cell-group>
 </template>
 
