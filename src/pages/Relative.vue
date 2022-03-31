@@ -13,62 +13,62 @@
       </div>
     </div>
   </div> -->
-<van-dropdown-menu>
-  <van-dropdown-item v-model="value" :options="options" />
-  <van-dropdown-item title="筛选" ref="item">
-    <van-cell center title="包邮">
-      <template #right-icon>
-        <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
-      </template>
-    </van-cell>
-    <van-cell center title="团购">
-      <template #right-icon>
-        <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
-      </template>
-    </van-cell>
-    <div style="padding: 5px 16px;">
-      <van-button type="danger" block round @click="onConfirm">
-        确认
-      </van-button>
-    </div>
-  </van-dropdown-item>
-</van-dropdown-menu>
+  <van-dropdown-menu>
+    <van-dropdown-item v-model="value" :options="options" />
+    <van-dropdown-item title="筛选" ref="item">
+      <van-cell center title="包邮">
+        <template #right-icon>
+          <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
+        </template>
+      </van-cell>
+      <van-cell center title="团购">
+        <template #right-icon>
+          <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
+        </template>
+      </van-cell>
+      <div style="padding: 5px 16px">
+        <van-button type="danger" block round @click="onConfirm">
+          确认
+        </van-button>
+      </div>
+    </van-dropdown-item>
+  </van-dropdown-menu>
 
-
-<van-swipe-cell>
-  <van-card
-    num="2"
-    price="2.00"
-    desc="描述信息"
-    title="商品标题"
-    class="goods-card"
-    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-  />
-  <template #right>
-    <van-button square text="删除" type="danger" class="delete-button" />
-  </template>
-</van-swipe-cell>
+  <van-swipe-cell>
+    <van-card
+      num="2"
+      price="2.00"
+      desc="描述信息"
+      title="商品标题"
+      currency=""
+      class="goods-card"
+      thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+    />
+    <template #right>
+      <van-button square text="删除" type="danger" class="delete-button" />
+    </template>
+  </van-swipe-cell>
 </template>
 
 <script>
-import { createApp } from 'vue';
-import { SwipeCell } from 'vant';
-import { ref } from 'vue';
+import { createApp } from 'vue'
+import { SwipeCell } from 'vant'
+import { ref } from 'vue'
 
 export default {
   setup() {
-    const item = ref(null);
-    const value = ref(0);
-    const switch1 = ref(false);
-    const switch2 = ref(false);
+    const item = ref(null)
+    const value = ref(0)
+    const switch1 = ref(false)
+    const switch2 = ref(false)
     const options = [
       { text: '全部商品', value: 0 },
       { text: '新款商品', value: 1 },
-      { text: '活动商品', value: 2 },
-    ];
+      { text: '活动商品', value: 2 }
+    ]
     const onConfirm = () => {
-      item.value.toggle();
-    };
+      item.value.toggle()
+    }
 
     return {
       item,
@@ -76,26 +76,22 @@ export default {
       switch1,
       switch2,
       options,
-      onConfirm,
-    };
-  },
-};
+      onConfirm
+    }
+  }
+}
 
-
-const app = createApp();
-app.use(SwipeCell);
-
-
+const app = createApp()
+app.use(SwipeCell)
 </script>
 
 <style>
-  .goods-card {
-    margin: 0;
-    background-color: @white;
-  }
+.goods-card {
+  margin: 0;
+  background-color: @white;
+}
 
-  .delete-button {
-    height: 100%;
-  }
+.delete-button {
+  height: 100%;
+}
 </style>
-
