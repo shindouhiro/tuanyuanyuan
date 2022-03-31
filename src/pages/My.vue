@@ -63,7 +63,8 @@
   }
 }
 .phone {
-  font-weight: 900;
+  font-weight: 400;
+  font-size: 30px;
   font-family: PingFang-SC-Regular;
 }
 </style>
