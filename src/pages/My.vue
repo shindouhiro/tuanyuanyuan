@@ -1,7 +1,7 @@
 <template>
   <div class="container flex flex-col">
     <van-row class="flex justify-around items-center flex-1">
-      <div>13800138000</div>
+      <div class="phone">13800138000</div>
       <van-image
         display="block"
         round
@@ -61,5 +61,9 @@
     color: #333333;
     font-weight: 400;
   }
+}
+.phone {
+  font-weight: 900;
+  font-family: PingFang-SC-Regular;
 }
 </style>
