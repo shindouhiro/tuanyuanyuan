@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-gray-100 flex flex-col h-16 text-sm px-2">
-    <p>
-      请务必认真填写以下内容，团圆圆目前致力于寻找走失的老人、小孩以及成年人，若走失事件超过1个月，则可能会增加找寻难度，还望理解。
+  <div class="introduction flex justify-center items-center p">
+    <p class="px-3">
+      线索提供注意事项：请保证线索的真实性，如恶搞等行为，一经发现，将
+      进行永久封号，将追究法律责任。
     </p>
   </div>
-
   <van-form @submit="onSubmit">
     <van-cell-group inset>
       <!-- 这是姓名起始的代码，从这里复制哦^_^ -->
@@ -207,8 +207,17 @@ export default {
       areaList,
       areachoose,
       findtime,
-      maxDate: new Date(),
+      maxDate: new Date()
     }
-  },
+  }
 }
 </script>
+<style lang="scss">
+.introduction {
+  background: #eaf6ff;
+  height: 58px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #4759ee;
+}
+</style>
