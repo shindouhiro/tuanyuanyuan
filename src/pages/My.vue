@@ -1,16 +1,18 @@
 <template>
-  <van-row class="flex justify-around items-center">
-    <div>13800138000</div>
-    <van-image
-      display="block"
-      round
-      width="5rem"
-      height="5rem"
-      pr-0
-      src="https://img.yzcdn.cn/vant/cat.jpeg"
-    />
-  </van-row>
-  <div class="nav">我们为万家团圆而努力</div>
+  <div class="container flex flex-col">
+    <van-row class="flex justify-around items-center flex-1">
+      <div>13800138000</div>
+      <van-image
+        display="block"
+        round
+        width="5rem"
+        height="5rem"
+        pr-0
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+      />
+    </van-row>
+    <div class="nav">我们为万家团圆而努力</div>
+  </div>
   <div class="wrap flex flex-row items-center">
     <div class="flex flex-1 flex-col justify-center items-center">
       <span class="iconfont icon-xiansuojilu"></span>
@@ -28,6 +30,23 @@
 </template>
 
 <style scoped lang="scss">
+.container {
+  height: 260px;
+  background: #eff3ff;
+  .nav {
+    width: 92%;
+    margin: 0 auto;
+    height: 53px;
+    line-height: 53px;
+    background: #4759ee;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0;
+    text-indent: 30px;
+  }
+}
 .van-row {
   width: 100%;
   height: auto;
@@ -42,18 +61,5 @@
     color: #333333;
     font-weight: 400;
   }
-}
-.nav {
-  width: 92%;
-  margin: 0 auto;
-  height: 53px;
-  line-height: 53px;
-  background: #4759ee;
-  border-top-left-radius: 19px;
-  border-top-right-radius: 19px;
-  font-size: 18px;
-  color: #ffffff;
-  letter-spacing: 0;
-  text-indent: 30px;
 }
 </style>
