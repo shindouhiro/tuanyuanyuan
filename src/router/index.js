@@ -7,6 +7,7 @@ import Layout from '../layout/index.vue'
 import Image from '../pages/Image.vue'
 // 关于我们的页面
 import About from '../pages/About.vue'
+import ProvideClues from '../pages/ProvideClues.vue'
 const routes = [
   {
     path: '/',
@@ -70,6 +71,18 @@ const routes = [
         component: About,
         meta: {
           title: '关于我们',
+          showTitle: false,
+          showBar:false
+          
+        }
+      },
+      // 我要提供线索页面
+      {
+        path: '/provideClues',
+        name: 'provideClues',
+        component: ProvideClues,
+        meta: {
+          title: '我要提供线索',
           showTitle: false,
           showBar:false
           
