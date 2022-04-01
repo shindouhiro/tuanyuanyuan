@@ -5,6 +5,8 @@ import Relative from '../pages/Relative.vue'
 import Clues from '../pages/Clues.vue'
 import Layout from '../layout/index.vue'
 import Image from '../pages/Image.vue'
+// 关于我们的页面
+import About from '../pages/About.vue'
 const routes = [
   {
     path: '/',
@@ -49,6 +51,15 @@ const routes = [
         component: Image,
         meta: {
           title: '对比'
+        }
+      },
+      // 关于我们页面
+      {
+        path: '/about',
+        name: 'about',
+        component: About,
+        meta: {
+          title: '关于我们'
         }
       }
     ]
