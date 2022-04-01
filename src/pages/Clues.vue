@@ -36,14 +36,16 @@
 
 
 <van-swipe-cell>
-  <van-card
+     <router-link to="/TracingDetails/">
+         <van-card
     
     price="双眼皮女孩"
     desc=""
     title="在人民广场南侧的垃圾桶发现，湖南口音皮肤比较黑，长头发眼睛大"
     class="goods-card"
     thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-  />
+         />
+    </router-link>
     <van-card
     
     price="双眼皮女孩"
