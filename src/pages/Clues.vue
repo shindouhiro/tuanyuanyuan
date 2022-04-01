@@ -1,233 +1,125 @@
 <template>
-  <div class="introduction flex justify-center items-center p">
-    <p class="px-3">
-      线索提供注意事项：请保证线索的真实性，如恶搞等行为，一经发现，将
-      进行永久封号，将追究法律责任。
-    </p>
-  </div>
-  <van-form @submit="onSubmit">
-    <van-cell-group inset>
-      <!-- 这是姓名起始的代码，从这里复制哦^_^ -->
-      <van-field
-        v-model="username"
-        name="username"
-        label="姓名"
-        required
-        placeholder="姓名"
-        :rules="[{ required: true, message: '请填写用户名' }]"
-      />
-      <!-- 从这里复制结束 -->
-      <van-field
-        name="sex"
-        label="性别"
-        required
-        placeholder="性别"
-        :rules="[{ required: true, message: '请填写用户名' }]"
-      >
-        <template #input>
-          <van-radio-group v-model="sex" direction="horizontal">
-            <van-radio name="1">男</van-radio>
-            <van-radio name="2">女</van-radio>
-          </van-radio-group>
-        </template>
-      </van-field>
-
-      <!-- 这是上传照片起始的代码 -->
-
-      <van-field name="uploader" label="疑似走失者照片" required>
-        <template #input>
-          <van-uploader v-model="value" />
-        </template>
-      </van-field>
-      <!-- 照片结束 -->
-      <!-- 特征描述begin -->
-      <van-field
-        v-model="description"
-        name="description"
-        label="特征描述"
-        required
-        placeholder="特征描述"
-        :rules="[{ required: true, message: '请输入特征描述' }]"
-      />
-      <!-- 特征描述end -->
-      <!-- 发现时间begin -->
-      <van-field
-        v-model="findtime"
-        is-link
-        readonly
-        name="datetimePicker"
-        label="发现时间"
-        required
-        placeholder="发现时间"
-        @click="showPicker = true"
-      />
-      <van-popup v-model:show="showPicker" position="bottom" required>
-        <van-datetime-picker
-          :formatter="formatter"
-          v-model="currentDate"
-          type="datetime"
-          title="选择完整时间"
-          :max-date="maxDate"
-          @confirm="onConfirm"
-          @cancel="showPicker = false"
-        />
-      </van-popup>
-
-      <!-- 发现时间end -->
-      <van-field
-        v-model="areachoose"
-        is-link
-        readonly
-        name="area"
-        label="发现地区"
-        required
-        placeholder="点击选择省市区"
-        @click="showArea = true"
-      />
-      <van-popup v-model:show="showArea" position="bottom">
-        <van-area
-          :area-list="areaList"
-          @confirm="onAreaConfirm"
-          @cancel="showArea = false"
-        />
-      </van-popup>
-      <!-- 补充地址开始 -->
-      <van-field
-        v-model="detailed_address"
-        name="detailed_address"
-        label="详细地址"
-        required
-        placeholder="详细地址"
-        :rules="[{ required: true, message: '请输入详细地址' }]"
-      />
-
-      <!-- 这是匿名开始 -->
-      <van-field
-        name="anonymous"
-        label="是否匿名"
-        required
-        placeholder="是否匿名"
-        :rules="[{ required: true, message: '请填写用户名' }]"
-      >
-        <template #input>
-          <van-radio-group v-model="anonymous" direction="horizontal">
-            <van-radio name="1">是</van-radio>
-            <van-radio name="2">否</van-radio>
-          </van-radio-group>
-        </template>
-      </van-field>
-      <!-- 这是匿名结束 -->
-
-      <van-field
-        v-model="contacts"
-        name="contacts"
-        label="联系人"
-        required
-        placeholder="联系人"
-        :rules="[{ required: true, message: '请填写联系人' }]"
-      />
-      <!-- 这是联系电话开始 -->
-      <van-field
-        v-model="telephone"
-        name="telephone"
-        label="联系电话"
-        required
-        placeholder="联系电话"
-        :rules="[{ required: true, message: '请填写联系电话' }]"
-      />
-      <!-- 这是联系电话结束 -->
-      <!-- 这是是否已报警开始 -->
-      <van-field
-        name="callpolice"
-        label="是否已报警"
-        required
-        placeholder="是否已报警"
-        :rules="[{ required: true, message: '请填写用户名' }]"
-      >
-        <template #input>
-          <van-radio-group v-model="callpolice" direction="horizontal">
-            <van-radio name="1">是</van-radio>
-            <van-radio name="2">否</van-radio>
-          </van-radio-group>
-        </template>
-      </van-field>
-      <!-- 这是是否已报警结束 -->
-    </van-cell-group>
-    <div style="margin: 16px">
-      <van-button round block type="primary" native-type="submit"
-        >提交</van-button
-      >
+  <!-- <div class="flex justify-around">
+    <div class="w-1/3 bg-green-300 flex flex-col h-40">
+      <div>图片</div>
+      <div class="text-sm mt-10">
+        在人民广场附近，经常会看到沿街乞讨，怀疑是拐卖来
+      </div>
     </div>
-  </van-form>
+    <div class="w-1/3 bg-blue-300 h-40">
+      <div>图片</div>
+      <div class="text-sm mt-10">
+        在人民广场附近，经常会看到沿街乞讨，怀疑是拐卖来
+      </div>
+    </div>
+  </div> -->
+<van-dropdown-menu>
+  <van-dropdown-item v-model="value" :options="options" />
+  <van-dropdown-item title="筛选" ref="item">
+    <van-cell center title="包邮">
+      <template #right-icon>
+        <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
+      </template>
+    </van-cell>
+    <van-cell center title="团购">
+      <template #right-icon>
+        <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
+      </template>
+    </van-cell>
+    <div style="padding: 5px 16px;">
+      <van-button type="danger" block round @click="onConfirm">
+        确认
+      </van-button>
+    </div>
+  </van-dropdown-item>
+</van-dropdown-menu>
+
+
+<van-swipe-cell>
+  <van-card
+    
+    price="双眼皮女孩"
+    desc=""
+    title="在人民广场南侧的垃圾桶发现，湖南口音皮肤比较黑，长头发眼睛大"
+    class="goods-card"
+    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  />
+    <van-card
+    
+    price="双眼皮女孩"
+    desc=""
+    title="在人民广场南侧的垃圾桶发现，湖南口音皮肤比较黑，长头发眼睛大"
+    class="goods-card"
+    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  />
+    <van-card
+    
+    price="双眼皮女孩"
+    desc=""
+    title="在人民广场南侧的垃圾桶发现，湖南口音皮肤比较黑，长头发眼睛大"
+    class="goods-card"
+    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  />
+    <van-card
+    
+    price="双眼皮女孩"
+    desc=""
+    title="在人民广场南侧的垃圾桶发现，湖南口音皮肤比较黑，长头发眼睛大"
+    class="goods-card"
+    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  />
+  <template #right>
+    <van-button square text="删除" type="danger" class="delete-button" />
+  </template>
+</van-swipe-cell>
 </template>
+
 <script>
-import { ref } from 'vue'
-import { areaList } from '@vant/area-data'
-import moment from 'moment '
+import { createApp } from 'vue';
+import { SwipeCell } from 'vant';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const contacts = ref('')
-    const description = ref('')
-    const callpolice = ref('1')
-    const sex = ref('1')
-    const telephone = ref('')
-    const anonymous = ref('1')
-    const username = ref('')
-    const password = ref('')
-    const detailed_address = ref('')
-    const onSubmit = (values) => {
-      console.log('submit', values)
-    }
-    const findtime = ref('')
-    const areachoose = ref('')
-    const showPicker = ref(false)
-    const showArea = ref(false)
-    const date = new Date()
-    const currentDate = ref(new Date())
+    const item = ref(null);
+    const value = ref(0);
+    const switch1 = ref(false);
+    const switch2 = ref(false);
+    const options = [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 },
+    ];
+    const onConfirm = () => {
+      item.value.toggle();
+    };
 
-    const onAreaConfirm = (areaValues) => {
-      showArea.value = false
-      areachoose.value = areaValues
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/')
-    }
-
-    const onConfirm = (value) => {
-      findtime.value = moment(value).format('YYYY-MM-DD HH:mm')
-      showPicker.value = false
-    }
     return {
-      contacts,
-      telephone,
-      description,
-      sex,
-      anonymous,
-      callpolice,
-      currentDate,
-      username,
-      password,
-      detailed_address,
-      onSubmit,
+      item,
+      value,
+      switch1,
+      switch2,
+      options,
       onConfirm,
-      onAreaConfirm,
-      showPicker,
-      showArea,
-      areaList,
-      areachoose,
-      findtime,
-      maxDate: new Date()
-    }
-  }
-}
+    };
+  },
+};
+
+
+const app = createApp();
+app.use(SwipeCell);
+
+
 </script>
-<style lang="scss">
-.introduction {
-  background: #eaf6ff;
-  height: 58px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #4759ee;
-}
+
+<style>
+  .goods-card {
+    margin: 0;
+    background-color: @white;
+  }
+
+  .delete-button {
+    height: 100%;
+  }
 </style>
+
