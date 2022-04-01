@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <div class="header" v-if="route.meta.title != '首页'">
+    <div class="header" v-show="route.meta.showTitle">
       <van-nav-bar
         :title="route.meta.title"
         v-if="route.meta.title != '首页'"
@@ -9,7 +9,7 @@
     <div class="content">
       <router-view></router-view>
     </div>
-    <div class="footer">
+    <div class="footer" v-show="route.meta.showBar">
       <van-tabbar v-model="active" @change="onChange">
         <!-- 自定义icon开始 -->
         <van-tabbar-item>

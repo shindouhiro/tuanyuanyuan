@@ -18,7 +18,9 @@ const routes = [
         name: 'home',
         component: Home,
         meta: {
-          title: '首页'
+          title: '首页',
+          showTitle: false,
+          showBar:true
         }
       },
       {
@@ -26,7 +28,9 @@ const routes = [
         name: 'my',
         component: My,
         meta: {
-          title: '我的'
+          title: '我的',
+          showTitle: false,
+          showBar:true
         }
       },
       {
@@ -34,7 +38,9 @@ const routes = [
         name: 'relative',
         component: Relative,
         meta: {
-          title: '寻亲大厅'
+          title: '寻亲大厅',
+          showTitle: true,
+          showBar:true
         }
       },
       {
@@ -42,7 +48,9 @@ const routes = [
         name: 'clues',
         component: Clues,
         meta: {
-          title: '线索大厅'
+          title: '线索大厅',
+          showTitle: true,
+          showBar:true
         }
       },
       {
@@ -50,7 +58,9 @@ const routes = [
         name: 'image',
         component: Image,
         meta: {
-          title: '对比'
+          title: '对比',
+          showTitle: false,
+          showBar:false
         }
       },
       // 关于我们页面
@@ -59,7 +69,10 @@ const routes = [
         name: 'about',
         component: About,
         meta: {
-          title: '关于我们'
+          title: '关于我们',
+          showTitle: false,
+          showBar:false
+          
         }
       }
     ]
