@@ -1,10 +1,12 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import My from '../pages/My.vue'
 import Relative from '../pages/Relative.vue'
 import Clues from '../pages/Clues.vue'
 import Layout from '../layout/index.vue'
 import Image from '../pages/Image.vue'
+// 关于我们的页面
+import About from '../pages/About.vue'
 const routes = [
   {
     path: '/',
@@ -50,12 +52,21 @@ const routes = [
         meta: {
           title: '对比'
         }
+      },
+      // 关于我们页面
+      {
+        path: '/about',
+        name: 'about',
+        component: About,
+        meta: {
+          title: '关于我们'
+        }
       }
     ]
   }
 ]
 
 export default createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
