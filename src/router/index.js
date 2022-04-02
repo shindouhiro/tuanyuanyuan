@@ -97,20 +97,18 @@ const routes = [
         meta: {
           title: '我要紧急寻亲',
           showTitle: false,
-          showBar:false,
-          
+          showBar: false
         }
       },
       // 寻亲详情页面
       {
         path: '/ tracingdetails',
         name: ' TracingDetails',
-        component:  TracingDetails,
+        component: TracingDetails,
         meta: {
           title: '寻亲详情',
           showTitle: false,
-          showBar:false
-          
+          showBar: false
         }
       }
     ]
