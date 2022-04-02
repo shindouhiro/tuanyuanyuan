@@ -19,7 +19,11 @@
   </div>
   <div class="grid grid-cols-2 gap-2 px-6 pb-1">
     <div>
-      <img src="../../static/images/want _to_ provide_ clues.png" />
+      <!--测试跳转  -->
+      <router-link to="/provideClues/">
+           <img src="../../static/images/want _to_ provide_ clues.png" />
+      </router-link> 
+     
     </div>
     <div>
       <img src="../../static/images/need_family.png" />

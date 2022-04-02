@@ -1,15 +1,17 @@
 <template>
   <div class="wrap">
-    <div class="header" v-if="route.meta.title != '首页'">
+    <div class="header" v-show="route.meta.showTitle">
       <van-nav-bar
+        left-text="返回"
         :title="route.meta.title"
         v-if="route.meta.title != '首页'"
+        @click-left="onClickLeft"
       />
     </div>
     <div class="content">
       <router-view></router-view>
     </div>
-    <div class="footer">
+    <div class="footer" v-show="route.meta.showBar">
       <van-tabbar v-model="active" @change="onChange">
         <!-- 自定义icon开始 -->
         <van-tabbar-item>
@@ -68,6 +70,7 @@ export default {
     const title = ref('首页')
     const router = useRouter()
     const route = useRoute()
+    const onClickLeft = () => history.back()
     watch(
       () => route.meta.title,
       (val) => {
@@ -115,7 +118,7 @@ export default {
           break
       }
     }
-    return { active, onChange, title, icon, route }
+    return { active, onChange, title, icon, route, onClickLeft }
   }
 }
 </script>
