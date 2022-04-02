@@ -7,11 +7,13 @@ import './assets/font/iconfont.css'
 import './assets/style/global.scss'
 
 import Vant, { Lazyload } from 'vant'
+const whiteList = ['/login', '/home', '/']
 router.beforeEach((to, from, next) => {
-  if (to.name === 'login') next()
-  if (to.name !== 'login') {
-    next({ name: 'login' })
+  if (whiteList.includes(to.path)) next()
+  if (to.path !== '/login') {
+    next({ path: '/login' })
   } else {
+    console.log('ok')
     next()
   }
 })
