@@ -54,7 +54,13 @@ export default {
       smsContent.value = 60
       smsDisabled.value = true
       timer = setInterval(() => {
-        smsContent.value--
+        if (smsContent.value == 0) {
+          clearInterval(timer)
+          smsContent.value = '获取验证码'
+          smsDisabled.value = false
+        } else {
+          smsContent.value--
+        }
       }, 1000)
     }
     onBeforeMount(() => {
