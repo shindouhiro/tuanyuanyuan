@@ -1,13 +1,12 @@
 <template>
   <div class="container">
-    <div class="description mt-20 pr-8">手机号登录</div>
-    <h1 class="title pl-8 pb-20 pt-10">密码登录</h1>
+    <h1 class="title pl-8 pb-20 pt-40">手机号登录</h1>
     <van-form @submit="onSubmit">
       <van-cell-group inset>
         <van-field
           v-model="tel"
           name="tel"
-          placeholder="用户名"
+          placeholder="请输入手机号"
           :rules="[{ required: true, message: '请输入手机号' }]"
         />
         <van-field
