@@ -5,7 +5,7 @@
       width="100%"
       height="auto"
       fit="contain"
-      src="../../static/images/banner.png"
+      src="../assets/images/banner.png"
       style="z-index=1"
     />
 
@@ -21,14 +21,13 @@
     <div>
       <!--测试跳转  -->
       <router-link to="/provideClues/">
-           <img src="../../static/images/want _to_ provide_ clues.png" />
-      </router-link> 
-     
+        <img src="../assets/images/clues.png" />
+      </router-link>
     </div>
     <div>
-      <router-link to="/Findfamily/"> 
-            <img src="../../static/images/need_family.png" />
-      </router-link> 
+      <router-link to="/Findfamily/">
+        <img src="../../static/images/need_family.png" />
+      </router-link>
     </div>
   </div>
 
@@ -54,28 +53,25 @@
     </van-collapse-item>
   </van-collapse> -->
   <!-- <div class="lost_text"> -->
-  <h1 class="font-extrabold text-xl leading-10 p-2 px-6
-">
-      
-      如遇小孩走失</h1>
-  <p class="text-base leading-8 px-6">1.采取排除法来理清思路。回想最后看到亲人的位置。到孩子经常去的地方。</p>
+  <h1 class="font-extrabold text-xl leading-10 p-2 px-6">如遇小孩走失</h1>
   <p class="text-base leading-8 px-6">
-        2.标记孩子走失的地方，立即展开地毯式搜索。
-      </p>
-      <!-- </div> -->
-      <h1 class="font-extrabold text-xl leading-7 p-3 px-6
-">
-      
-      家人走失怎么办</h1>
+    1.采取排除法来理清思路。回想最后看到亲人的位置。到孩子经常去的地方。
+  </p>
+  <p class="text-base leading-8 px-6">
+    2.标记孩子走失的地方，立即展开地毯式搜索。
+  </p>
+  <!-- </div> -->
+  <h1 class="font-extrabold text-xl leading-7 p-3 px-6">家人走失怎么办</h1>
   <p class="text-base leading-8 px-6">1.立即报警，无需等待24小时。</p>
   <p class="text-base leading-8 px-6">
-        2.组织尽量多的人手，在老人最后走失的地点分为四个不同的方向(东南西北)去寻找，立即报警，利用警务资源进行查找。
-      </p>
+    2.组织尽量多的人手，在老人最后走失的地点分为四个不同的方向(东南西北)去寻找，立即报警，利用警务资源进行查找。
+  </p>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { getSrc } from '../utils'
 export default {
   setup() {
     const activeNames = ref(['1', '2'])
@@ -89,7 +85,7 @@ export default {
           console.log(res, 'res')
         })
     })
-    return { activeNames }
+    return { activeNames, getSrc }
   }
 }
 </script>
@@ -109,5 +105,6 @@ img {
   display: block;
   border: ture;
 }
-h1{}
+h1 {
+}
 </style>
