@@ -8,6 +8,9 @@ import Image from '../pages/Image.vue'
 // 关于我们的页面
 import About from '../pages/About.vue'
 import ProvideClues from '../pages/ProvideClues.vue'
+// 我要紧急寻亲页面
+import Findfamily from '../pages/Findfamily.vue'
+import TracingDetails from '../pages/TracingDetails.vue'
 const routes = [
   {
     path: '/',
@@ -84,6 +87,30 @@ const routes = [
           title: '我要提供线索',
           showTitle: false,
           showBar: false
+        }
+      },
+      // 我要紧急寻亲页面
+      {
+        path: '/findfamily',
+        name: 'Findfamily',
+        component: Findfamily,
+        meta: {
+          title: '我要紧急寻亲',
+          showTitle: false,
+          showBar:false,
+          
+        }
+      },
+      // 寻亲详情页面
+      {
+        path: '/ tracingdetails',
+        name: ' TracingDetails',
+        component:  TracingDetails,
+        meta: {
+          title: '寻亲详情',
+          showTitle: false,
+          showBar:false
+          
         }
       }
     ]

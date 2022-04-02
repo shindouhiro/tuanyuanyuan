@@ -26,7 +26,9 @@
      
     </div>
     <div>
-      <img src="../../static/images/need_family.png" />
+      <router-link to="/Findfamily/"> 
+            <img src="../../static/images/need_family.png" />
+      </router-link> 
     </div>
   </div>
 
