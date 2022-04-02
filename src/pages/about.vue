@@ -21,8 +21,8 @@ export default {
   }
 }
 
-const app = createApp()
-app.use(SwipeCell)
+// const app = createApp()
+// app.use(SwipeCell)
 </script>
 
 <style></style>
