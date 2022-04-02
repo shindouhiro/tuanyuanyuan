@@ -11,7 +11,7 @@
         />
         <van-field
           v-model="sms"
-          name="sms"
+          name="code"
           center
           clearable
           :rules="[{ required: true, message: '请输入验证码' }]"
@@ -40,6 +40,7 @@
 
 <script>
 import { ref, onBeforeMount } from 'vue'
+import axios from 'axios'
 
 export default {
   setup() {
@@ -65,7 +66,12 @@ export default {
     onBeforeMount(() => {
       clearInterval(timer)
     })
-    return { value, tel, sms, smsContent, handleCount, smsDisabled }
+    const onSubmit = (values) => {
+      axios.post('/api/users/register', values).then((res) => {
+        console.log(res, 'res')
+      })
+    }
+    return { value, tel, sms, smsContent, handleCount, smsDisabled, onSubmit }
   }
 }
 </script>

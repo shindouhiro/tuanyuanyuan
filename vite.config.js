@@ -14,6 +14,10 @@ export default defineConfig({
       '/rest': {
         target: 'https://aip.baidubce.com/',
         changeOrigin: true
+      },
+      '/api': {
+        target: 'http://192.168.110.155:4000',
+        changeOrigin: true
       }
     }
   }
