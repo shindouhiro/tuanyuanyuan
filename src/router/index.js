@@ -11,6 +11,8 @@ import ProvideClues from '../pages/ProvideClues.vue'
 // 我要紧急寻亲页面
 import Findfamily from '../pages/Findfamily.vue'
 import TracingDetails from '../pages/TracingDetails.vue'
+import Login from '../pages/Login.vue'
+import Register from '../pages/Register.vue'
 const routes = [
   {
     path: '/',
@@ -112,6 +114,26 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/login',
+    name: ' login',
+    component: Login,
+    meta: {
+      title: '登录',
+      showTitle: false,
+      showBar: false
+    }
+  },
+  {
+    path: '/register',
+    name: ' register',
+    component: Register,
+    meta: {
+      title: '注册',
+      showTitle: false,
+      showBar: false
+    }
   }
 ]
 
