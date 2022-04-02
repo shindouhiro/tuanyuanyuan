@@ -29,7 +29,7 @@
           </template>
         </van-field>
       </van-cell-group>
-      <div style="margin: 16px">
+      <div class="mx-8 my-10">
         <van-button round block type="primary" native-type="submit">
           提交
         </van-button>
