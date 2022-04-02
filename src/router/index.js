@@ -6,7 +6,7 @@ import Clues from '../pages/Clues.vue'
 import Layout from '../layout/index.vue'
 import Image from '../pages/Image.vue'
 // 关于我们的页面
-import About from '../pages/About.vue'
+// import About from '../pages/About.vue'
 import ProvideClues from '../pages/ProvideClues.vue'
 // 我要紧急寻亲页面
 import Findfamily from '../pages/Findfamily.vue'
@@ -70,16 +70,16 @@ const routes = [
         }
       },
       // 关于我们页面
-      {
-        path: '/about',
-        name: 'about',
-        component: About,
-        meta: {
-          title: '关于我们',
-          showTitle: false,
-          showBar: false
-        }
-      },
+      // {
+      //   path: '/about',
+      //   name: 'about',
+      //   component: About,
+      //   meta: {
+      //     title: '关于我们',
+      //     showTitle: false,
+      //     showBar: false
+      //   }
+      // },
       // 我要提供线索页面
       {
         path: '/provideClues',
@@ -141,4 +141,3 @@ export default createRouter({
   history: createWebHistory(),
   routes
 })
-
